@@ -18,9 +18,13 @@ class MoviesController extends Controller
             ->get('https://api.themoviedb.org/3/movie/popular?language=tr-TR')
             ->json('results');
 
+        //dd($popularMovies);
+
         $nowPlayingMovies = Http::withToken(config('services.tmdb.token'))
             ->get('https://api.themoviedb.org/3/movie/now_playing?language=tr-TR')
             ->json('results');
+
+        //dd($nowPlayingMovies);
 
         $genresArray = Http::withToken(config('services.tmdb.token'))
             ->get('https://api.themoviedb.org/3/genre/movie/list?language=tr-TR')

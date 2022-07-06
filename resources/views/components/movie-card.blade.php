@@ -11,10 +11,6 @@
             <span class="release-date">{{\Carbon\Carbon::parse($movie['release_date'])->translatedFormat('j M Y')}}</span>
             {{--<span class="relase-date">{{\Carbon\Carbon::now('Europe/Istanbul')->translatedFormat('d M Y H:i')}}</span>--}}
         </div>
-        <div class="text-gray-400 text-sm">
-            @foreach($movie['genre_ids'] as $genre)
-                {{$genres->get($genre)}}@if (!$loop->last), @endif
-            @endforeach
-        </div>
+        <div class="text-gray-400 text-sm">@foreach ($movie['genre_ids'] as $genre){{ $genres->get($genre) }}@if(!$loop->last),@endif @endforeach</div>
     </div>
 </div>
